@@ -15,10 +15,14 @@ function App() {
 
     <div>
 
-      <Route exact path='favorites'>
+      <Route exact path='/favorites'>
 
         <FavoriteGIFs />
 
+      </Route>
+
+      <Route exact path='/'>
+        <GIFSearch />
       </Route>
 
     </div>
