@@ -2,9 +2,12 @@ import GIFItem from '../GIFItem/GIFItem';
 import './GIFSearch.css';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 function GIFSearch() {
 
+  const dispatch = useDispatch();
+  
   const [setGIF, setNewGIF] = useState('');
   const testImages = [
     'https://media.giphy.com/media/BfiL8ZJWqfw7C/giphy-downsized-large.gif',
@@ -19,6 +22,10 @@ const handleChange = (event) => {
 
 const handleClick = () => {
   console.log('Searching for GIFs', setGIF);
+  dispatch({
+    type: 'SAGA/FETCH_GIFS',
+    payload: setGIF
+  })
 }
 
 

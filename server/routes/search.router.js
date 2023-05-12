@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     const GiphyUrl = `https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_API_KEY}&q=${search}&limit=20&rating=g`
     axios.get(GiphyUrl)
       .then(response => {
-        res.sendStatus(200);
+        res.send(response.data.data);
       })
       .catch(err => {
         console.error(err);
