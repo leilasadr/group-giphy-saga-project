@@ -27,9 +27,6 @@ const handleClick = () => {
     payload: setGIF
   })
 }
-
-
-
   return (
     <div>
       <h1>Giphy Finder!</h1>
